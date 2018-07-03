@@ -142,6 +142,16 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -409,12 +419,24 @@
                 
               
 
-              <time title="创建时间：2018-07-02 20:14:20 / 修改时间：20:18:37" itemprop="dateCreated datePublished" datetime="2018-07-02T20:14:20+08:00">2018-07-02</time>
+              <time title="创建时间：2018-07-02 20:14:20" itemprop="dateCreated datePublished" datetime="2018-07-02T20:14:20+08:00">2018-07-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-03 19:12:50" itemprop="dateModified" datetime="2018-07-03T19:12:50+08:00">2018-07-03</time>
               
             
           </span>
@@ -422,6 +444,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/02/me/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/02/me/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -557,6 +589,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/02/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/02/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -887,6 +929,30 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Kbo4wQDmcU7GHHXFM3Y8ddXA-gzGzoHsz',
+        appKey: 'omXmy6Ui5rx9RobVL7E20WjB',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
