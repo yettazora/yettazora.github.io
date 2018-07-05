@@ -116,7 +116,14 @@
 <meta property="og:description" content="前言安装Git+Node.js搭建自己的个人博客，当然不仅仅是只安装这两个软件，后续还有一系列详细的操作会在接下来的文章中介绍。博主也是才刚刚开始学习使用这个框架，因此有任何写的不足之处，欢迎在评论区指正。PS:评论区刚刚搭建好，还是有挺多BUG的。O__O”">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/imgs/nodejsdownload.png">
-<meta property="og:updated_time" content="2018-07-04T12:00:00.866Z">
+<meta property="og:image" content="http://yoursite.com/imgs/hexohome.png">
+<meta property="og:image" content="http://yoursite.com/imgs/cregithubrepo.png">
+<meta property="og:image" content="http://yoursite.com/imgs/configgithubrepo.png">
+<meta property="og:image" content="http://yoursite.com/imgs/reposetting.png">
+<meta property="og:image" content="http://yoursite.com/imgs/deploykey.png">
+<meta property="og:image" content="http://yoursite.com/imgs/setdeploykey.png">
+<meta property="og:image" content="http://yoursite.com/imgs/httpimg.png">
+<meta property="og:updated_time" content="2018-07-05T08:43:54.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux，利用Hexo搭建个人博客">
 <meta name="twitter:description" content="前言安装Git+Node.js搭建自己的个人博客，当然不仅仅是只安装这两个软件，后续还有一系列详细的操作会在接下来的文章中介绍。博主也是才刚刚开始学习使用这个框架，因此有任何写的不足之处，欢迎在评论区指正。PS:评论区刚刚搭建好，还是有挺多BUG的。O__O”">
@@ -417,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2018-07-04 17:11:08 / 修改时间：20:00:00" itemprop="dateCreated datePublished" datetime="2018-07-04T17:11:08+08:00">2018-07-04</time>
+              <time title="创建时间：2018-07-04 17:11:08" itemprop="dateCreated datePublished" datetime="2018-07-04T17:11:08+08:00">2018-07-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-05 16:43:54" itemprop="dateModified" datetime="2018-07-05T16:43:54+08:00">2018-07-05</time>
               
             
           </span>
@@ -505,7 +524,49 @@
 <h2 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2 安装Node.js"></a>2 安装Node.js</h2><p>Hexo是基于Node.js的静态博客，因此Node.js里面的下载工具npm对于搭建Hexo博客而言是非常好用的，这里是Linux版本的Node.js的<a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a>。<br><img src="/imgs/nodejsdownload.png"><br>选择一个版本下载，博主这里选的是LTS版本。<br>下载后解压，博主选择解压到了自己的家目录。<br>解压后配置自己的环境变量，打开终端输入以下命令用vim编辑：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure></p>
 <p>在文件的末尾，添加环境变量，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_HOME=[Node.js的解压文件夹]</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$NODE_HOME</span>/bin </span><br><span class="line"><span class="built_in">export</span> NODE_PATH=<span class="variable">$NODE_HOME</span>/lib/node_modules</span><br></pre></td></tr></table></figure></p>
 <p>编辑完毕，保存退出输入<code>source /etc/profile</code>立即生效环境变量。<br>输入<code>node -v</code>，得到类似于下面结果则表示配置成功：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yetta@yetta-PC:~$ node -v</span><br><span class="line">v8.11.3</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3 安装Hexo"></a>3 安装Hexo</h2><p>接下来就是用刚刚配置好的Node.js的npm工具安装Hexo:</p>
+<ol>
+<li>新建一个文件夹，可以随便命名，不过这个命名代表的是你博客项目的名字，这个目录在下文中统称为<code>站点目录</code>。</li>
+<li>进入到<code>站点目录</code>，打开终端，使用命令<code>npm install -g hexo-cli<br></code>安装hexo，等待安装。</li>
+<li><p>在终端中输入<code>hexo -v</code>，得到类似下面的结果则表示安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">yetta@yetta-PC:~/hexo$ hexo -v</span><br><span class="line">hexo: 3.7.1</span><br><span class="line">hexo-cli: 1.1.0</span><br><span class="line">os: Linux 4.15.0-21deepin-generic linux x64</span><br><span class="line">http_parser: 2.8.0</span><br><span class="line">node: 8.11.3</span><br><span class="line">v8: 6.2.414.54</span><br><span class="line">uv: 1.19.1</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">ares: 1.10.1-DEV</span><br><span class="line">modules: 57</span><br><span class="line">nghttp2: 1.32.0</span><br><span class="line">napi: 3</span><br><span class="line">openssl: 1.0.2o</span><br><span class="line">icu: 60.1</span><br><span class="line">unicode: 10.0</span><br><span class="line">cldr: 32.0</span><br><span class="line">tz: 2017c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化文件夹，在<code>站点目录</code>路径的终端输入<code>hexo init</code>进行初始化，初始化后<code>站点目录</code>文件如下：</p>
+<img src="/imgs/hexohome.png">
+<p>当然刚建立的项目，<code>站点目录</code>下可能没有那么多文件夹和文件，不过以下几个是必需存在的，否则就表明搭建出错了，解释说明：<br><strong>_config.yml</strong><br>网站的 配置 信息，您可以在此配置大部分的参数。<br><strong>package.json</strong><br>应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。<br><strong>scaffolds</strong><br>模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。<br>Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。<br><strong>source</strong><br>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。<br><strong>themes</strong><br>主题 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<blockquote><p>至此为止，前期的软件的下载安装就已经配置完成了，接下来就是再配置github了。</p>
+</blockquote>
+<h2 id="4-配置github"><a href="#4-配置github" class="headerlink" title="4 配置github"></a>4 配置github</h2></li>
+<li>首先到<code><a href="https://github.com" target="_blank" rel="noopener">https://github.com</a></code>创建github账号，创建账号的过程这里就不一一赘述了。</li>
+<li>创建一个新的repository，具体操作如下：<img src="/imgs/cregithubrepo.png">
+点击<code>New repositery</code>，就进入配置页面。</li>
+<li>配置新的repository，具体如下：<img src="/imgs/configgithubrepo.png">
+Repository name填写的是<code>[yourname].github.io</code><strong>注意：</strong> 一定要以github.io结尾。</li>
+<li>终端配置git的账户信息，输入:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"YourName"</span></span><br><span class="line">git config --global user.email <span class="string">"YourEmail"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里的名字和Email就填你自己的就好了。</p>
+<ol start="5">
+<li>创建SSH,在终端中输入<code>ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a>“</code>，生成的过程中需要输入用户名和密码，都可以选择不填，直接按Enter建跳过。在生成了SSH秘钥后便进入到家目录的~/.ssh目录下，用<code>cd ~/.ssh</code>命令进入到此目录，找到id_rsa.pub文件，复制此文件的所有内容。</li>
+<li>在你的github刚创建的repositery下，找到Settings：<img src="/imgs/reposetting.png"></li>
+<li>在左侧可以找到Deploy keys然后点<code>Add deploy key</code>。<img src="/imgs/deploykey.png"></li>
+<li>Title可以随便填写，Key粘贴刚才复制的SSH秘钥，再选中<code>Allow write access</code>：<img src="/imgs/setdeploykey.png">
+然后保存就好了。</li>
+<li>在终端里面输入<code>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code>进行验证，如果看到Hi后面是你的用户名，就说明成功了，类似下面的结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi yettazora/yettazora.github.io! You<span class="string">'ve successfully authenticated, </span></span><br><span class="line"><span class="string">but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="5-配置站点目录-config-yml文件"><a href="#5-配置站点目录-config-yml文件" class="headerlink" title="5 配置站点目录_config.yml文件"></a>5 配置<code>站点目录</code>_config.yml文件</h2><p>这个文件就是整个博客项目的配置文件了。<br>用编辑器编辑_config.yml，找到deploy配置节点进行配置，以下为配置的内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubBlogName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>这里的YourgithubName和YourgithubName分别填你github的名字和项目的名字，不知道的可以参考下图：<br><img src="/imgs/httpimg.png"><br>复制链接，可以直接配置到<code>站点目录</code>的配置文件中去。<br>接下来可以进行本地测试，但是需要服务器的单独组件，因此在<code>站点目录</code>中，输入<code>npm i hexo-server</code><br>安装完毕之后，输入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p><strong>解释</strong></p>
+<ol>
+<li><code>hexo clean</code>是用于清除缓存文件db.json和已生成的静态文件public。网站显示异常时可以执行这条命令试试。</li>
+<li><code>hexo generate</code>可以缩写为<code>hexo g</code>生成网站静态文件到默认设置的public文件夹。便于查看网站生成的静态文件或者手动部署网站；如果使用自动部署，不需要先执行该命令。</li>
+<li><code>hexo server</code>可以缩写为<code>hexo s</code>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对于<code>站点目录</code>_config.yml的修改，需要重启本地服务器后才能预览效果。<br>启动服务后，在浏览器地址栏输入<code>localhost://4000</code>，就可以查看到你的博客默认主页了。<h2 id="6-上传到github的博客上"><a href="#6-上传到github的博客上" class="headerlink" title="6 上传到github的博客上"></a>6 上传到github的博客上</h2>同样也是需要下载组件，在<code>站点目录</code>中输入<code>npm install hexo-deployer-git –save</code>，等待下载完毕后，在<code>站点目录</code>中输入(同样的<code>hexo deploy</code>可以缩写为<code>hexo d</code>)：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>过程中需要输入你的github的名字和密码，自己要看清楚输入。在最后的终端输出信息为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO deploy <span class="keyword">done</span>:git</span><br></pre></td></tr></table></figure></p>
+<p>就表明部署项目成功了。<br>在浏览器中，输入<code><a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a></code>就可以看到你的博客的信息了，至此博客搭建成功。</p>
+
       
     </div>
 
@@ -727,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Git"><span class="nav-number">2.1.</span> <span class="nav-text">1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">2 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">3.安装Hexo</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Git"><span class="nav-number">2.1.</span> <span class="nav-text">1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">2 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">3 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置github"><span class="nav-number">2.4.</span> <span class="nav-text">4 配置github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-配置站点目录-config-yml文件"><span class="nav-number">2.5.</span> <span class="nav-text">5 配置站点目录_config.yml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传到github的博客上"><span class="nav-number">2.6.</span> <span class="nav-text">6 上传到github的博客上</span></a></li></ol></li></ol></div>
             
 
           </div>
