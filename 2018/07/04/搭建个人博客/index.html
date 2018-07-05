@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://yoursite.com/imgs/deploykey.png">
 <meta property="og:image" content="http://yoursite.com/imgs/setdeploykey.png">
 <meta property="og:image" content="http://yoursite.com/imgs/httpimg.png">
-<meta property="og:updated_time" content="2018-07-05T08:43:54.920Z">
+<meta property="og:updated_time" content="2018-07-05T08:53:05.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux，利用Hexo搭建个人博客">
 <meta name="twitter:description" content="前言安装Git+Node.js搭建自己的个人博客，当然不仅仅是只安装这两个软件，后续还有一系列详细的操作会在接下来的文章中介绍。博主也是才刚刚开始学习使用这个框架，因此有任何写的不足之处，欢迎在评论区指正。PS:评论区刚刚搭建好，还是有挺多BUG的。O__O”">
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-05 16:43:54" itemprop="dateModified" datetime="2018-07-05T16:43:54+08:00">2018-07-05</time>
+                <time title="修改时间：2018-07-05 16:53:05" itemprop="dateModified" datetime="2018-07-05T16:53:05+08:00">2018-07-05</time>
               
             
           </span>
@@ -536,7 +536,7 @@
 <p>当然刚建立的项目，<code>站点目录</code>下可能没有那么多文件夹和文件，不过以下几个是必需存在的，否则就表明搭建出错了，解释说明：<br><strong>_config.yml</strong><br>网站的 配置 信息，您可以在此配置大部分的参数。<br><strong>package.json</strong><br>应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。<br><strong>scaffolds</strong><br>模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。<br>Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。<br><strong>source</strong><br>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。<br><strong>themes</strong><br>主题 文件夹。Hexo 会根据主题来生成静态页面。</p>
 <blockquote><p>至此为止，前期的软件的下载安装就已经配置完成了，接下来就是再配置github了。</p>
 </blockquote>
-<h2 id="4-配置github"><a href="#4-配置github" class="headerlink" title="4 配置github"></a>4 配置github</h2></li>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="4-配置github"><a href="#4-配置github" class="headerlink" title="4 配置github"></a>4 配置github</h2></li>
 <li>首先到<code><a href="https://github.com" target="_blank" rel="noopener">https://github.com</a></code>创建github账号，创建账号的过程这里就不一一赘述了。</li>
 <li>创建一个新的repository，具体操作如下：<img src="/imgs/cregithubrepo.png">
 点击<code>New repositery</code>，就进入配置页面。</li>
@@ -561,11 +561,12 @@ Repository name填写的是<code>[yourname].github.io</code><strong>注意：</s
 <ol>
 <li><code>hexo clean</code>是用于清除缓存文件db.json和已生成的静态文件public。网站显示异常时可以执行这条命令试试。</li>
 <li><code>hexo generate</code>可以缩写为<code>hexo g</code>生成网站静态文件到默认设置的public文件夹。便于查看网站生成的静态文件或者手动部署网站；如果使用自动部署，不需要先执行该命令。</li>
-<li><code>hexo server</code>可以缩写为<code>hexo s</code>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对于<code>站点目录</code>_config.yml的修改，需要重启本地服务器后才能预览效果。<br>启动服务后，在浏览器地址栏输入<code>localhost://4000</code>，就可以查看到你的博客默认主页了。<h2 id="6-上传到github的博客上"><a href="#6-上传到github的博客上" class="headerlink" title="6 上传到github的博客上"></a>6 上传到github的博客上</h2>同样也是需要下载组件，在<code>站点目录</code>中输入<code>npm install hexo-deployer-git –save</code>，等待下载完毕后，在<code>站点目录</code>中输入(同样的<code>hexo deploy</code>可以缩写为<code>hexo d</code>)：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<li><code>hexo server</code>可以缩写为<code>hexo s</code>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；对于<code>站点目录</code>_config.yml的修改，需要重启本地服务器后才能预览效果。<br>启动服务后，在浏览器地址栏输入<code>localhost://4000</code>，就可以查看到你的博客默认主页了。<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="6-上传到github的博客上"><a href="#6-上传到github的博客上" class="headerlink" title="6 上传到github的博客上"></a>6 上传到github的博客上</h2>同样也是需要下载组件，在<code>站点目录</code>中输入<code>npm install hexo-deployer-git –save</code>，等待下载完毕后，在<code>站点目录</code>中输入(同样的<code>hexo deploy</code>可以缩写为<code>hexo d</code>)：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>过程中需要输入你的github的名字和密码，自己要看清楚输入。在最后的终端输出信息为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO deploy <span class="keyword">done</span>:git</span><br></pre></td></tr></table></figure></p>
-<p>就表明部署项目成功了。<br>在浏览器中，输入<code><a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a></code>就可以看到你的博客的信息了，至此博客搭建成功。</p>
+<p>就表明部署项目成功了。</p>
+<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>在浏览器中，输入<code><a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a></code>就可以看到你的博客的信息了，至此博客搭建成功。<br>博主第一次写博客，希望大家看到我的拙作能在Linux上搭建成功。有什么不懂的地方，可以在这里评论（好希望有个人能回复下我==）。</p>
 
       
     </div>
@@ -788,7 +789,7 @@ Repository name填写的是<code>[yourname].github.io</code><strong>注意：</s
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Git"><span class="nav-number">2.1.</span> <span class="nav-text">1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">2 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">3 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置github"><span class="nav-number">2.4.</span> <span class="nav-text">4 配置github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-配置站点目录-config-yml文件"><span class="nav-number">2.5.</span> <span class="nav-text">5 配置站点目录_config.yml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传到github的博客上"><span class="nav-number">2.6.</span> <span class="nav-text">6 上传到github的博客上</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Git"><span class="nav-number">2.1.</span> <span class="nav-text">1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">2 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">3 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置github"><span class="nav-number">3.1.</span> <span class="nav-text">4 配置github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-配置站点目录-config-yml文件"><span class="nav-number">3.2.</span> <span class="nav-text">5 配置站点目录_config.yml文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">4.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传到github的博客上"><span class="nav-number">4.1.</span> <span class="nav-text">6 上传到github的博客上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完成"><span class="nav-number">5.</span> <span class="nav-text">完成</span></a></li></ol></div>
             
 
           </div>
