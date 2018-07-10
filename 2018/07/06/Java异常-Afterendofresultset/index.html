@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="每天改变一点点">
 <meta property="og:description" content="今天调试代码在做测试的时候，发现JDBC在连接数据库时，在使用ResultSet时报了一个异常java.sql.SQLException: After end of result set，控制台打印如下:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-10T00:46:11.463Z">
+<meta property="og:updated_time" content="2018-07-10T07:59:45.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java异常--After end of resultset">
 <meta name="twitter:description" content="今天调试代码在做测试的时候，发现JDBC在连接数据库时，在使用ResultSet时报了一个异常java.sql.SQLException: After end of result set，控制台打印如下:">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-10 08:46:11" itemprop="dateModified" datetime="2018-07-10T08:46:11+08:00">2018-07-10</time>
+                <time title="修改时间：2018-07-10 15:59:45" itemprop="dateModified" datetime="2018-07-10T15:59:45+08:00">2018-07-10</time>
               
             
           </span>
@@ -506,7 +506,8 @@
         <p>今天调试代码在做测试的时候，发现JDBC在连接数据库时，在使用<code>ResultSet</code>时报了一个异常<code>java.sql.SQLException: After end of result set</code>，控制台打印如下:<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLException: After end of result set</span><br><span class="line"></span><br><span class="line">	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:<span class="number">545</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:<span class="number">513</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:<span class="number">505</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:<span class="number">479</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:<span class="number">499</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:<span class="number">871</span>)</span><br><span class="line">	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:<span class="number">892</span>)</span><br><span class="line">	at com.yetta.db.DBUtilTest.getConnection(DBUtilTest.java:<span class="number">24</span>)</span><br><span class="line">	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>)</span><br><span class="line">	at java.base/java.lang.reflect.Method.invoke(Method.java:<span class="number">564</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod$<span class="number">1</span>.runReflectiveCall(FrameworkMethod.java:<span class="number">47</span>)</span><br><span class="line">	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:<span class="number">12</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:<span class="number">44</span>)</span><br><span class="line">	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:<span class="number">17</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:<span class="number">271</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">70</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">50</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">3</span>.run(ParentRunner.java:<span class="number">238</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">1</span>.schedule(ParentRunner.java:<span class="number">63</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:<span class="number">236</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.access$<span class="number">000</span>(ParentRunner.java:<span class="number">53</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">2</span>.evaluate(ParentRunner.java:<span class="number">229</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.run(ParentRunner.java:<span class="number">309</span>)</span><br><span class="line">	at org.junit.runner.JUnitCore.run(JUnitCore.java:<span class="number">160</span>)</span><br><span class="line">	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:<span class="number">68</span>)</span><br><span class="line">	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:<span class="number">47</span>)</span><br><span class="line">	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:<span class="number">242</span>)</span><br><span class="line">	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:<span class="number">70</span>)</span><br></pre></td></tr></table></figure></p>
 <p>其实报这个异常，无非就是两个原因：<br><blockquote><p>1.resultSet 已经被关闭<br>2.resultSet 已经到末尾了 </p>
 </blockquote><br>博主的代码献上：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">       Connection connection=DBUtil.getConnection();</span><br><span class="line">       PreparedStatement preparedStatement=connection.prepareStatement(<span class="string">"SELECT * FROM user "</span>);</span><br><span class="line">       ResultSet resultSet=preparedStatement.executeQuery();</span><br><span class="line">       <span class="keyword">while</span> (resultSet.next());</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.println(resultSet.getString(<span class="string">"userName"</span>)+<span class="string">"  "</span>+resultSet.getString(<span class="string">"userPwd"</span>));</span><br><span class="line">       &#125;</span><br><span class="line">       resultSet.close();</span><br><span class="line">       preparedStatement.close();</span><br><span class="line">       connection.close();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>找了半天的错误，围绕这两个原因才发现是博主太粗心大意了。在我的while循环代码块哪里，竟然用了分号直接结束了循环，导致<code>resultSet.next()</code>直接到了末尾，因此在接下来的输出语句中调用<code>resultSet</code>，报了这个异常。<br>所以大家在报了这个异常后，直接检查是否是上述两个原因就行了。</p>
+<p>找了半天的错误，围绕这两个原因才发现是博主太粗心大意了。在我的while循环代码块哪里，竟然用了分号直接结束了循环，导致<code>resultSet.next()</code>直接到了末尾，因此在接下来的输出语句中调用<code>resultSet</code>，报了这个异常。<br><blockquote><p>所以大家在报了这个异常后，直接检查是否是上述两个原因就行了。</p>
+</blockquote></p>
 
       
     </div>
@@ -575,6 +576,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/10/JSP-Servlet基础/" rel="prev" title="JSP--Servlet基础">
+                JSP--Servlet基础 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -646,7 +651,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -688,7 +693,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -825,9 +834,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -849,16 +855,6 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
@@ -1157,7 +1153,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('-1');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
