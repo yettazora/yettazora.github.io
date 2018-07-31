@@ -118,7 +118,8 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yetta.online/imgs/Java/20180710Servlet-过滤器和监听器/pic1.png">
 <meta property="og:image" content="http://yetta.online/imgs/Java/20180710Servlet-过滤器和监听器/pic2.png">
-<meta property="og:updated_time" content="2018-07-10T13:17:28.188Z">
+<meta property="og:image" content="http://yetta.online/imgs/Java/20180710Servlet-过滤器和监听器/pic3.png">
+<meta property="og:updated_time" content="2018-07-13T01:19:38.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet--过滤器和监听器">
 <meta name="twitter:description" content="希望读者们通过看完这篇文章，可以能够熟练使用过滤器解决乱码显示，能够使用监听器实现事件监听。  过滤器概述在JSP页面中通过页面编码解决中文乱码问题太繁琐，是否有更有效的办法？使用过滤器技术实现对请求数据的过滤，在请求与响应数据之间，添加过滤。">
@@ -417,12 +418,24 @@
                 
               
 
-              <time title="创建时间：2018-07-10 16:45:32 / 修改时间：21:17:28" itemprop="dateCreated datePublished" datetime="2018-07-10T16:45:32+08:00">2018-07-10</time>
+              <time title="创建时间：2018-07-10 16:45:32" itemprop="dateCreated datePublished" datetime="2018-07-10T16:45:32+08:00">2018-07-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 09:19:38" itemprop="dateModified" datetime="2018-07-13T09:19:38+08:00">2018-07-13</time>
               
             
           </span>
@@ -528,8 +541,11 @@
 <li>&lt;filter-name&gt;子元素用于设置filter的注册名称。该值必须是在&lt;filter&gt;元素中声明过的过滤器的名字</li>
 <li>&lt;url-pattern&gt;设置filter所拦截的请求路径(过滤器关联的URL样式)</li>
 <li>&lt;servlet-name&gt;指定过滤器所拦截的Servlet名称。</li>
-<li>&lt;dispatcher&gt;指定过滤器所拦截的资源被 Servlet 容器调用的方式，可以是REQUEST,INCLUDE,FORWARD和ERROR之一，默认REQUEST. 可以设置多个<dispatcher> 子元素用来指定 Filter 对资源的多种调用方式进行拦截</dispatcher></li>
+<li>&lt;dispatcher&gt;指定过滤器所拦截的资源被 Servlet 容器调用的方式，可以是REQUEST,INCLUDE,FORWARD和ERROR之一，默认REQUEST. 可以设置多个&lt;dispatcher&gt;子元素用来指定 Filter 对资源的多种调用方式进行拦截<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>TestFilter1<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>REQUEST<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>FORWARD<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<h1 id="过滤器链"><a href="#过滤器链" class="headerlink" title="过滤器链"></a>过滤器链</h1><p>多个过滤器组成过滤器链<br><img src="/imgs/Java/20180710Servlet-过滤器和监听器/pic3.png"></p>
+<h1 id="初始化参数"><a href="#初始化参数" class="headerlink" title="初始化参数"></a>初始化参数</h1><p>配置&lt;init-param&gt;元素<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>initparam<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span><span class="comment">&lt;!-- 参数名称 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>初始化参数<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span><span class="comment">&lt;!-- 参数值 --&gt;</span>        </span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -781,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器概述"><span class="nav-number">1.</span> <span class="nav-text">过滤器概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器工作原理"><span class="nav-number">2.</span> <span class="nav-text">过滤器工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器的生命周期"><span class="nav-number">3.</span> <span class="nav-text">过滤器的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器的生命周期-1"><span class="nav-number">3.1.</span> <span class="nav-text">过滤器的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器的应用场合"><span class="nav-number">3.2.</span> <span class="nav-text">过滤器的应用场合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器的配置"><span class="nav-number">4.</span> <span class="nav-text">过滤器的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#映射Filter"><span class="nav-number">4.1.</span> <span class="nav-text">映射Filter</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器概述"><span class="nav-number">1.</span> <span class="nav-text">过滤器概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器工作原理"><span class="nav-number">2.</span> <span class="nav-text">过滤器工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器的生命周期"><span class="nav-number">3.</span> <span class="nav-text">过滤器的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器的生命周期-1"><span class="nav-number">3.1.</span> <span class="nav-text">过滤器的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器的应用场合"><span class="nav-number">3.2.</span> <span class="nav-text">过滤器的应用场合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器的配置"><span class="nav-number">4.</span> <span class="nav-text">过滤器的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#映射Filter"><span class="nav-number">4.1.</span> <span class="nav-text">映射Filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器链"><span class="nav-number">5.</span> <span class="nav-text">过滤器链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化参数"><span class="nav-number">6.</span> <span class="nav-text">初始化参数</span></a></li></ol></div>
             
 
           </div>
